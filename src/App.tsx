@@ -1,10 +1,12 @@
-import Header from '../src/components/Header'
+import Header from './components/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/Home';
 
 function App() {
 	return (
 		<>
 			<Header />
+			<Home />
 		</>
 	);
 }

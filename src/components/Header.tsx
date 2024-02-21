@@ -1,16 +1,16 @@
 import { Navbar, Nav, Container, NavbarBrand } from 'react-bootstrap';
-import logo from '../../assets/logo.svg';
+import logo from '../assets/logo.svg';
 import { FaHeart, FaUser, FaBagShopping } from 'react-icons/fa6';
 
 const Header = () => {
 	return (
 		<>
-			<Navbar expand="lg" className="" style={{ backgroundColor: '#7952B3' }}>
+			<Navbar expand="lg" className="" style={{ backgroundColor: '#5269b3' }}>
 				<Container
 					className="container-fluid justify-content-center"
 					style={{ letterSpacing: '0.5px' }}>
 					<NavbarBrand>
-						<img src={logo} alt="" width="60" height="37" className="ms-5" />
+						<img src={logo} alt="" width="60" height="37"/>
 					</NavbarBrand>
 					<Navbar.Brand
 						href="#home"
