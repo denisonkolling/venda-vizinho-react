@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import Header from '../src/components/Header'
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
-  return (
-    <>
-   
-    </>
-  )
+	return (
+		<>
+			<Header />
+		</>
+	);
 }
 
-export default App
+export default App;
