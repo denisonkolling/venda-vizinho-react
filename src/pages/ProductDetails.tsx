@@ -14,15 +14,12 @@ const ProductDetails = () => {
 	const [product, setProduct] = useState<Product>();
 	const params = useParams();
 	const { id } = params;
-	const navigate = useNavigate();
-	const [rating, setRating] = useState<number>(0);
-	const [comment, setComment] = useState<string>('');
-	const [refresh, setRefresh] = useState<boolean>(false);
+	const navigate = useNavigate();	
 
 	useEffect(() => {
 		setProduct(products[8]);
 		window.scrollTo(0, 0);
-	}, [id, refresh]);
+	}, [id]);
 
 	const onAdd = () => {
 		navigate('/cart');
@@ -147,7 +144,7 @@ const ProductDetails = () => {
 											<Form.Label>Avaliação</Form.Label>
 											<Form.Control
 												required
-												onChange={(e: any) => setRating(e.target.value)}
+												// onChange={(e: any) => setRating(e.target.value)}
 												as="select">
 												<option value={1}>⭐</option>
 												<option value={2}>⭐⭐</option>
@@ -160,7 +157,7 @@ const ProductDetails = () => {
 											<Form.Label>Comentário</Form.Label>
 											<Form.Control
 												required
-												onChange={(e) => setComment(e.target.value)}
+												// onChange={(e) => setComment(e.target.value)}
 												as={'textarea'}
 												rows={3}
 											/>

@@ -1,8 +1,51 @@
+//Utilities
+import { useNavigate } from 'react-router-dom'
+
+//Styles
 import { Navbar, Nav, Container, NavbarBrand } from 'react-bootstrap';
-import logo from '../assets/logo.svg';
 import { FaHeart, FaUser, FaBagShopping } from 'react-icons/fa6';
+import logo from '../assets/logo.svg';
 
 const Header = () => {
+
+
+	const navigate = useNavigate()
+
+	const handleLogoClick = () => {
+    navigate('/')
+  }
+
+  const handleProductsClick = () => {
+    navigate('/produtos')
+  }
+
+
+	const handleCategoriesClick = () => {
+    navigate('/categorias')
+  }
+
+	const handleOffersClick = () => {
+    navigate('/ofertas')
+  }
+
+	const handleLoginClick = () => {
+    navigate('/login')
+  }
+
+  const handleSignUpClick = () => {
+    navigate('/sign-up')
+  }
+
+  const handleSignOutClick = () => {
+    // dispatch(logoutUser())
+    // signOut(auth)
+  }
+
+  const handleCartClick = () => {
+    // dispatch(toggleCart())
+  }
+
+
 	return (
 		<>
 			<Navbar expand="lg" className="" style={{ backgroundColor: '#5269b3' }}>
@@ -10,7 +53,7 @@ const Header = () => {
 					className="container-fluid justify-content-center"
 					style={{ letterSpacing: '0.5px' }}>
 					<NavbarBrand>
-						<img src={logo} alt="" width="60" height="37"/>
+						<img src={logo} alt="" width="60" height="37" onClick={handleLogoClick}/>
 					</NavbarBrand>
 					<Navbar.Brand
 						href="/home"
@@ -21,16 +64,13 @@ const Header = () => {
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="me-auto">
-							<Nav.Link href="/home" className="text-white fw-medium">
-								Home
-							</Nav.Link>
-							<Nav.Link href="/produtos" className="text-white fw-medium">
+							<Nav.Link onClick={handleProductsClick} className="text-white fw-medium">
 								Produtos
 							</Nav.Link>
-							<Nav.Link href="/categorias" className="text-white fw-medium">
+							<Nav.Link onClick={handleCategoriesClick} className="text-white fw-medium">
 								Categorias
 							</Nav.Link>
-							<Nav.Link href="/ofertas" className="text-white fw-medium">
+							<Nav.Link onClick={handleOffersClick} className="text-white fw-medium">
 								Ofertas
 							</Nav.Link>
 						</Nav>
