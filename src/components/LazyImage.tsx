@@ -4,17 +4,19 @@ type Props = {
   className?: string;
   imageUrl?: string;
   style?: any;
+  width?: any;
+  height?: any;
 };
 
-const ImageLazy = ({ className, imageUrl, style }: Props) => {
+const ImageLazy = ({ className, imageUrl, style, width, height }: Props) => {
   return (
     <LazyLoadImage
       style={style}
       src={imageUrl}
       loading="lazy"
-      //    width={width}
+         width={width}
       className={className}
-      // height={height}
+      height={height}
       alt="Image Alt"
       effect="blur"
     />
