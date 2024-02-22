@@ -13,7 +13,7 @@ const Header = () => {
 						<img src={logo} alt="" width="60" height="37"/>
 					</NavbarBrand>
 					<Navbar.Brand
-						href="#home"
+						href="/home"
 						className="text-white fw-bold"
 						style={{ letterSpacing: '1px' }}>
 						Venda de Vizinho
