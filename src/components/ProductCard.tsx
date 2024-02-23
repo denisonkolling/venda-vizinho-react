@@ -1,8 +1,8 @@
 import { Card } from 'react-bootstrap';
-// import { Link } from "react-router-dom";
 import { formatCurrencry } from '../utils/helpers';
 import { ReviewTypes } from '../utils/interfaces';
 import ImageLazy from './LazyImage';
+import { Link } from 'react-router-dom';
 
 export type Product = {
 	_id: number | string;
@@ -42,7 +42,7 @@ const ProductCard = ({ product }: Props) => {
 		//TODO: Fix responsivness card component
 		//TODO: Improve card images and text
 
-		<Card
+		<Card as={Link} to={`/produto/${product._id}`}
 			className="my-3 p-3 rounded"
 			style={{
 				height: '390px',
@@ -52,7 +52,6 @@ const ProductCard = ({ product }: Props) => {
 				alignItems: 'center',
 				overflow: 'hidden',
 			}}>
-
 			<ImageLazy
 				imageUrl={product.image}
 				style={{

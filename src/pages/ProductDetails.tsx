@@ -12,14 +12,21 @@ import Header from '../components/Header';
 
 const ProductDetails = () => {
 	const [product, setProduct] = useState<Product>();
-	const params = useParams();
-	const { id } = params;
+	const params = useParams<{ id?: string }>();
 	const navigate = useNavigate();	
 
 	useEffect(() => {
-		setProduct(products[8]);
-		window.scrollTo(0, 0);
-	}, [id]);
+    if (params.id !== undefined) {
+      const productId = parseInt(params.id);
+      const selectedProduct = products.find(product => product._id === productId);
+      if (selectedProduct) {
+        setProduct(selectedProduct);
+        window.scrollTo(0, 0);
+      } else {
+        navigate('/not-found');
+      }
+    }
+  }, [params.id, navigate]);
 
 	const onAdd = () => {
 		navigate('/cart');
@@ -60,20 +67,20 @@ const ProductDetails = () => {
 								<ListGroup.Item>
 									{' '}
 									<h5 className=" d-flex justify-content-between align-items-center">
-										<span>Preço:</span>
+										<span>Preço</span>
 										<span>{product && formatCurrencry(product.price)}</span>
 									</h5>
 								</ListGroup.Item>
 
 								<ListGroup.Item>
 									<h5 className=" d-flex justify-content-between align-items-center">
-										<span>Categoria:</span>
+										<span>Categoria</span>
 										<span>{product?.category}</span>
 									</h5>
 								</ListGroup.Item>
 								<ListGroup.Item>
 									<h5 className=" d-flex justify-content-between align-items-center">
-										<span>Marca:</span>
+										<span>Marca</span>
 										<span>{product?.brand}</span>
 									</h5>
 								</ListGroup.Item>

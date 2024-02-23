@@ -18,7 +18,7 @@ const RoutesApp = () => {
 					<Route path="/produtos" element={<Products />} />
 					<Route path="/categorias" element={<Categories />} />
 					<Route path="/ofertas" element={<Offers />} />
-					<Route path="/produto" element={<ProductDetails />} />
+					<Route path={`/produto/:id`} element={<ProductDetails />} />
 				</Routes>
 			</Fragment>
 		</BrowserRouter>
