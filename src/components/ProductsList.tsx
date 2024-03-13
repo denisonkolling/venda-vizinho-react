@@ -6,7 +6,7 @@ const ProductsList = () => {
 	return (
 		<>
 			<Container>
-				<h2 className="mt-3 text-center">Anúncios</h2>
+				<h2 className="mt-3 text-center text-body-secondary">Anúncios</h2>
 				<Row md={3} xs={1} lg={4} className="mt-4 mb-4">
 					{products.map((product) => (
 						<Col key={product._id}>

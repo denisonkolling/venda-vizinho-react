@@ -1,4 +1,4 @@
-import { Card } from 'react-bootstrap';
+import { Card,  } from 'react-bootstrap';
 import { formatCurrencry } from '../utils/helpers';
 import { ReviewTypes } from '../utils/interfaces';
 import ImageLazy from './LazyImage';
@@ -43,7 +43,7 @@ const ProductCard = ({ product }: Props) => {
 		//TODO: Improve card images and text
 
 		<Card as={Link} to={`/produto/${product._id}`}
-			className="my-3 p-3 rounded"
+			className="my-3 p-3 rounded text-decoration-none"
 			style={{
 				height: '390px',
 				width: 'auto',
@@ -63,9 +63,9 @@ const ProductCard = ({ product }: Props) => {
 			/>
 			
 			<Card.Body style={{ textAlign: 'center' }}>
-				<h6>{product.name}</h6>
+				<h6 className='fs-6 fw-bold text-body-secondary'>{product.name}</h6>
 				<br />
-				<p>{formatCurrencry(product.price)}</p>
+				<p className='fs-6 fw-bold text-black-50'>{formatCurrencry(product.price)}</p>
 			</Card.Body>
 		</Card>
 	);
