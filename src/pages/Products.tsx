@@ -1,15 +1,15 @@
-import { Container } from 'react-bootstrap';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import { Container } from "react-bootstrap";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const Products = () => {
-	return (
-		<>
-			<Header />
-			<Container className='vh-100'>Products</Container>
-			<Footer />
-		</>
-	);
+  return (
+    <div style={{ backgroundColor: "#E7E7E7" }}>
+      <Header />
+      <Container className="vh-100">Products</Container>
+      <Footer />
+    </div>
+  );
 };
 
 export default Products;
