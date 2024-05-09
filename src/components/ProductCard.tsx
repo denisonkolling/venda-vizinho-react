@@ -56,9 +56,9 @@ const ProductCard = ({ product }: Props) => {
 				imageUrl={product.image}
 				style={{
 					width: '100%',
-					height: 'auto',
-					maxHeight: '260px',
+					height: '250px',
 					objectFit: 'cover',
+					borderRadius: '5px',
 				}}
 			/>
 			
